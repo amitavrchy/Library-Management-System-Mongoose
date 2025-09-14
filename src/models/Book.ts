@@ -2,13 +2,13 @@ import mongoose, { model, Schema } from "mongoose";
 
 export interface Ibook{
     _id: mongoose.Types.ObjectId
-    title: String,
-    author: String,
+    title: string,
+    author: string,
     genre: "FICTION" | "NON_FICTION" | "SCIENCE" | "HISTORY" | "BIOGRAPHY" | "FANTASY",
-    isbn: String,
-    description?: String,
-    copies: Number,
-    available: Boolean,
+    isbn: string,
+    description?: string,
+    copies: number,
+    available: boolean,
 }
 
 const BookSchema: Schema<Ibook> = new Schema({
