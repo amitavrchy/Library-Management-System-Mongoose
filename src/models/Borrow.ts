@@ -35,6 +35,10 @@ BorrowSchema.pre("save", async function (next) {
     if(book.copies < this.quantity){
         return next(new Error("Not enough"));
     }
+
+    book.copies -= this.quantity
+    await book.save();
+    next();
 })
 
 export default model<IBorrow>("Borrow", BorrowSchema)
